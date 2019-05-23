@@ -16,11 +16,11 @@
    });
 
    $('button#previous').on('click', function() {
-     if (player.playState !== 'playing') { return; }
+     if (player.playState !== 'playing') { return false; }
 
      const currentSongIndex = album.songs.indexOf(player.currentlyPlaying);
      const previousSongIndex = currentSongIndex - 1;
-     if (previousSongIndex >= album.songs.length) { return; }
+     if (currentSongIndex < 1) { return; }
 
      const previousSong = album.songs[previousSongIndex];
      player.playPause(previousSong);
