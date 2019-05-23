@@ -6,6 +6,13 @@ class Player {
     this.soundObject = new buzz.sound(this.currentlyPlaying.soundFileUrl);
   }
 
+  getDuration() {
+    return this.soundObject.getDuration();
+  }
+
+  getTime() {
+      return this.soundObject.getTime();
+    }
 
   playPause (song = this.currentlyPlaying) {
     if (this.currentlyPlaying !== song) {
